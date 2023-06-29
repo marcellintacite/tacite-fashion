@@ -13,12 +13,11 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   const { isOpen } = useAppSelector((state: storeType) => state.header);
-  console.log("isOpen", isOpen);
 
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchProducts());
-  }, []);
+  }, [isOpen]);
   return (
     <main>
       {isOpen && <HeaderFirst />}

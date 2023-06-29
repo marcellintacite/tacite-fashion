@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 type Props = {};
 
-export default function ({}: Props) {
+export default function Reduction({}: Props) {
   return (
     <section className="w-full min-h-[300px]  md:h-[350px] bg-slate-900 rounded-md overflow-hidden mt-7 mb-3 flex flex-col md:flex-row">
       <div className="flex-1 h-full bg-cover bg-center my-bg-class hidden md:flex "></div>
