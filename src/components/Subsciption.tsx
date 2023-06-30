@@ -30,7 +30,7 @@ export default function Subsciption({}: Props) {
         bg-primary text-white font-bold py-3 px-6 rounded-md bg-slate-900 hover:bg-slate-800 transition duration-300 ease-in-out
         "
         >
-          S'inscrire
+          {"S'inscrire"}
         </button>
       </form>
     </section>

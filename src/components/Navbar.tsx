@@ -50,9 +50,9 @@ export default function Navbar({}: Props) {
 
             <AiOutlineShopping size={24} />
           </button>
-          <button>
+          <Link href={"/login"}>
             <AiOutlineUser size={20} />
-          </button>
+          </Link>
         </div>
       </div>
     </header>

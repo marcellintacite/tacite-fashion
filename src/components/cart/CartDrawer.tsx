@@ -1,5 +1,6 @@
 import {
   addQuantity,
+  calculateTotal,
   reduceQuantity,
   removeToCart,
 } from "@/redux/features/cart/cartSlice";
@@ -7,7 +8,7 @@ import { toggleCart } from "@/redux/features/headerSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { storeType } from "@/types/store";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { FaTrash, FaShoppingBag } from "react-icons/fa";
 
 // import component 👇
@@ -18,17 +19,21 @@ import "react-modern-drawer/dist/index.css";
 
 const CartDrawer = () => {
   const { isCartOpen } = useAppSelector((state: storeType) => state.header);
-  const { cart } = useAppSelector((state: storeType) => state.cart);
+  const { cart, total } = useAppSelector((state: storeType) => state.cart);
   const dispatch = useAppDispatch();
+  console.log(total);
+
+  useEffect(() => {
+    dispatch(calculateTotal());
+  }, [cart]);
 
   return (
     <>
-      <button onClick={() => dispatch(toggleCart())}>Show</button>
       <Drawer
         open={isCartOpen}
         onClose={() => dispatch(toggleCart())}
         direction="right"
-        className="md:min-w-[380px] p-3 min-w-[300px]"
+        className="md:min-w-[380px] p-3 min-w-[300px] overflow-auto dr"
       >
         <div className="">
           <div className="flex justify-between items-center ">
@@ -86,6 +91,20 @@ const CartDrawer = () => {
             </div>
           ))}
         </div>
+
+        {cart.length > 0 && (
+          <div className="mt-4">
+            <div className="flex justify-between items-center mt-4">
+              <p className="font-semibold">Total</p>
+              <p className="font-bold">{total.toFixed(2)} $</p>
+            </div>
+            <div className="flex justify-center mt-4">
+              <button className="bg-slate-800 text-white w-full px-4 py-2 rounded-md">
+                Commander
+              </button>
+            </div>
+          </div>
+        )}
       </Drawer>
     </>
   );
