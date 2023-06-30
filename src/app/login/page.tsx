@@ -53,9 +53,9 @@ export default function page({}: Props) {
                   {"Login"}
                 </button>
                 <p className="pt-4 pb-2">
-                  Vous n'avez pas de compte ?{" "}
+                  {"  Vous n'avez pas de compte ?"}
                   <a href="/register" className="text-slate-600">
-                    Inscrivez-vous
+                    {"Inscrivez-vous"}
                   </a>
                 </p>
               </form>
