@@ -15,6 +15,7 @@ export default function page({}: Props) {
         <section>
           <div className="flex md:h-[80vh] md:justify-center md:items-center">
             <div className="w-[400px] rounded-md min-h-[400px] border shadow shadow-slate-100 p-3 mt-5 md:mt-0">
+              <div></div>
               <h2 className="text-center font-bold text-3xl">Connexion</h2>
               <p className="text-center pt-2">
                 Veuillez nous fournir vos identifiants pour accéder à votre
@@ -49,7 +50,7 @@ export default function page({}: Props) {
                 bg-slate-600 text-white rounded-md p-2 mt-5 w-full
                 "
                 >
-                  Login
+                  {"Login"}
                 </button>
                 <p className="pt-4 pb-2">
                   Vous n'avez pas de compte ?{" "}
