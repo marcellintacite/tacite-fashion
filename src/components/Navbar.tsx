@@ -1,3 +1,6 @@
+import { toggleCart } from "@/redux/features/headerSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { storeType } from "@/types/store";
 import Link from "next/link";
 import {
   AiOutlineSearch,
@@ -8,8 +11,10 @@ import {
 type Props = {};
 
 export default function Navbar({}: Props) {
+  const { totalItems } = useAppSelector((state: storeType) => state.cart);
+  const dispatch = useAppDispatch();
   return (
-    <header className="flex items-center h-16 gap-2 justify-between md:shadow-none md:p-0 shadow-md p-3 rounded-md">
+    <header className="flex items-center h-16 gap-2 justify-between md:shadow-none md:p-0 shadow-md p-3  md:rounded-none sticky top-0 bg-white z-50">
       <h2 className="font-extrabold uppercase md:text-lg md:block hidden">
         TaciteFashion
       </h2>
@@ -38,8 +43,12 @@ export default function Navbar({}: Props) {
           />
         </form>
         <div className="flex items-center gap-6 ml-4 justify-center">
-          <button>
-            <AiOutlineShopping size={20} />
+          <button className="relative" onClick={() => dispatch(toggleCart())}>
+            <span className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 p-1 rounded-full text-[10px] text-white flex items-center justify-center">
+              {totalItems}
+            </span>
+
+            <AiOutlineShopping size={24} />
           </button>
           <button>
             <AiOutlineUser size={20} />

@@ -12,12 +12,17 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
+const initialState = {
+  products: [],
+  loading: true,
+} as {
+  products: productType[];
+  loading: boolean;
+};
+
 const caterorySlice = createSlice({
   name: "categories",
-  initialState: {
-    products: [],
-    loading: true,
-  },
+  initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.pending, (state) => {

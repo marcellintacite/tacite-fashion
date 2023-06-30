@@ -3,12 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useAppDispatch } from "@/redux/hooks";
+import { addToCart } from "@/redux/features/cart/cartSlice";
+import { toast } from "react-hot-toast";
 
 type Props = {
   product: productType;
 };
 
 export default function ProductCard({ product }: Props) {
+  const dispatch = useAppDispatch();
   return (
     <div className=" flex gap-4 flex-1 ">
       <div className="w-40 h-[100px] p-2 overflow-hidden flex justify-center items-center bg-slate-100 rounded-md">
@@ -28,7 +32,19 @@ export default function ProductCard({ product }: Props) {
         </Link>
 
         <p className="text-sm">$ {product.price}</p>
-        <button className="bg-black text-white rounded-md p-2 w-8 h-8 flex items-center gap-2">
+        <button
+          className="bg-black text-white rounded-md p-2 w-8 h-8 flex items-center gap-2"
+          onClick={() => {
+            dispatch(addToCart({ product }));
+            toast.success("Ajouté avec succès!", {
+              style: {
+                borderRadius: "10px",
+                background: "#333",
+                color: "#fff",
+              },
+            });
+          }}
+        >
           <AiOutlineShoppingCart size={25} />
         </button>
       </div>

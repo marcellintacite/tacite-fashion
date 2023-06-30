@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .my-bg-class {
-  background-image: url("../assets/f.jpg");
+  background-image: url("../assets/ee.jpg");
   background-position: center;
   background-size: cover;
 }

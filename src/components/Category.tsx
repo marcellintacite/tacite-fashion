@@ -5,6 +5,7 @@ import i3 from "@/assets/cat/man.jpg";
 import i4 from "@/assets/cat/women.jpg";
 import Image from "next/image";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import Link from "next/link";
 
 type catType = [
   "electronics" | "jewelery" | "men's clothing" | "women's clothing"
@@ -31,10 +32,13 @@ export default function Category() {
               <Image src={img} alt={cat} className="w-full h-full" />
 
               <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#0005] flex items-end justify-center hover:bg-[#0008] transition-all">
-                <button className="p-4 mb-2 bg-slate-50 rounded-md flex gap-2 first-letter:uppercase">
+                <Link
+                  href={`/products/category/${cat}`}
+                  className="p-4 mb-2 bg-slate-50 rounded-md flex gap-2 first-letter:uppercase"
+                >
                   {cat}
                   <AiOutlineArrowRight size={25} />
-                </button>
+                </Link>
               </div>
             </div>
           );
