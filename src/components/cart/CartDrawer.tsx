@@ -27,7 +27,7 @@ const CartDrawer = () => {
 
   useEffect(() => {
     dispatch(calculateTotal());
-  }, [dispatch]);
+  });
 
   return (
     <>
