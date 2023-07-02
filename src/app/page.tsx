@@ -19,7 +19,6 @@ type Props = {};
 
 export default function page({}: Props) {
   const { isOpen } = useAppSelector((state: storeType) => state.header);
-  const [search, setSearch] = useState("");
 
   const dispatch = useAppDispatch();
   useEffect(() => {
@@ -40,12 +39,12 @@ export default function page({}: Props) {
               name="search"
               className="w-full p-2 md:p3 rounded-md outline-none border-gray-700"
               placeholder="Recherchez"
-              onChange={(e) => setSearch(e.target.value)}
+              // onChange={(e) => setSearch(e.target.value)}
             />
             <button
               className="bg-black text-white p-2 md:p-3 rounded-md active:scale-50"
               onClick={() => {
-                dispatch(setSearchString(search));
+                // dispatch(setSearchString(search));
               }}
             >
               <AiOutlineSearch size={30} />
