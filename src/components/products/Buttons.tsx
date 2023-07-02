@@ -15,7 +15,7 @@ type Props = {
   product: productType;
 };
 
-export default function ({ product }: Props) {
+export default function Buttons({ product }: Props) {
   const { cart } = useAppSelector((state) => state.cart);
   const isInCart = cart.find((item) => item.id === product.id);
   const dispatch = useAppDispatch();

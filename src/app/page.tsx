@@ -23,7 +23,7 @@ export default function Page({}: Props) {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchProducts());
-  }, [isOpen]);
+  }, [dispatch]);
 
   return (
     <main className="mt-3">

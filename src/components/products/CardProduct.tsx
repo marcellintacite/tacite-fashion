@@ -1,4 +1,5 @@
 import { productType } from "@/types/product";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import ReactStars from "react-stars";
@@ -11,9 +12,11 @@ export default function CardProduct({ data }: Props) {
   return (
     <article className="md:w-full w-[90%] m-auto border p-2 rounded-md border-gray-200 anim">
       <div className="w-full">
-        <img
+        <Image
           src={data.image}
           alt={data.title}
+          width={300}
+          height={72}
           className="w-full object-cover md:object-fill h-72 rounded-md"
         />
       </div>
