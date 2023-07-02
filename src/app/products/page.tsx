@@ -1,12 +1,8 @@
 "use client";
-import HeaderFirst from "@/components/HeaderFirst";
-import { storeType } from "@/types/store";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import Navbar from "@/components/Navbar";
+
 import Hero from "@/components/Hero";
 import Category from "@/components/Category";
-import { useEffect } from "react";
-import { fetchProducts } from "@/redux/features/categories/categorySlice";
+
 import Products from "@/components/Products";
 import Reducton from "@/components/Reducton";
 import Footer from "@/components/Footer";

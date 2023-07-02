@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import CartDrawer from "@/components/cart/CartDrawer";
 import React from "react";
 
 type Props = {};

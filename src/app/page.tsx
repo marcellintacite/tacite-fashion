@@ -1,16 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
-import { AiOutlineSearch, AiFillFilter } from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
 import ProductsList from "@/components/products/ProductsList";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
-import { storeType } from "@/types/store";
-import {
-  fetchProducts,
-  setSearchString,
-} from "@/redux/features/categories/categorySlice";
+import { fetchProducts } from "@/redux/features/categories/categorySlice";
 import { useEffect } from "react";
 import Filter from "@/components/products/Filter";
 import Footer from "@/components/Footer";
@@ -18,8 +14,6 @@ import Footer from "@/components/Footer";
 type Props = {};
 
 export default function Page({}: Props) {
-  const { isOpen } = useAppSelector((state: storeType) => state.header);
-
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchProducts());
