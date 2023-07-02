@@ -1,6 +1,7 @@
 import {
   addQuantity,
   calculateTotal,
+  clearCart,
   reduceQuantity,
   removeToCart,
 } from "@/redux/features/cart/cartSlice";
@@ -8,8 +9,9 @@ import { toggleCart } from "@/redux/features/headerSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { storeType } from "@/types/store";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect } from "react";
-import { FaTrash, FaShoppingBag } from "react-icons/fa";
+import { FaTrash, FaShoppingBag, FaWhatsapp } from "react-icons/fa";
 
 // import component 👇
 import Drawer from "react-modern-drawer";
@@ -98,9 +100,23 @@ const CartDrawer = () => {
               <p className="font-semibold">Total</p>
               <p className="font-bold">{total.toFixed(2)} $</p>
             </div>
-            <div className="flex justify-center mt-4">
-              <button className="bg-slate-800 text-white w-full px-4 py-2 rounded-md">
-                Commander
+            <div className="flex justify-center mt-4 flex-col gap-3">
+              <Link
+                className="bg-slate-800 flex items-center justify-center gap-4 text-white w-full px-4 py-3 rounded-md"
+                href={`https://wa.me/0999537410?text=Bonjour, j'aimerais commander ces produits (${
+                  cart[0].title
+                },${cart[1]?.title},...) avec un total de ${total.toFixed(
+                  2
+                )} $ soit ${(total * 2400).toFixed(2)} en FC`}
+              >
+                {"Commander"}
+                <FaWhatsapp />
+              </Link>
+              <button
+                className="bg-red-400 text-white w-full px-4 py-2 rounded-md"
+                onClick={() => dispatch(clearCart())}
+              >
+                Vider le panier
               </button>
             </div>
           </div>

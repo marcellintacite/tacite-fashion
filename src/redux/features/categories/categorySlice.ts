@@ -11,19 +11,26 @@ export const fetchProducts = createAsyncThunk(
     } catch (error) {}
   }
 );
-
-const initialState = {
-  products: [],
-  loading: true,
-} as {
+type initialState = {
   products: productType[];
   loading: boolean;
+  search: string;
+};
+
+const initialState: initialState = {
+  products: [],
+  loading: true,
+  search: "",
 };
 
 const caterorySlice = createSlice({
   name: "categories",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    updateSearch: (state, action) => {
+      state.search = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.pending, (state) => {
       state.loading = true;
@@ -37,5 +44,7 @@ const caterorySlice = createSlice({
     });
   },
 });
+
+export const { updateSearch } = caterorySlice.actions;
 
 export default caterorySlice.reducer;

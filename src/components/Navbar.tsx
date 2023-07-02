@@ -14,20 +14,25 @@ export default function Navbar({}: Props) {
   const { totalItems } = useAppSelector((state: storeType) => state.cart);
   const dispatch = useAppDispatch();
   return (
-    <header className="flex items-center h-16 gap-2 justify-between md:shadow-none md:p-0 shadow-md p-3  md:rounded-none sticky top-0 bg-white z-50">
-      <h2 className="font-extrabold uppercase md:text-lg md:block hidden">
+    <header className="flex w-full items-center h-16 gap-2 justify-between md:shadow-none md:p-0 shadow-md p-3  md:rounded-none sticky top-0 bg-white z-50">
+      <Link href={"/"} className="font-extrabold md:text-lg md:block hidden">
         TaciteFashion
-      </h2>
-      <h2 className="font-extrabold uppercase md:hidden text-sm">TFashion</h2>
+      </Link>
+      <Link href={"/"} className="font-extrabold uppercase md:hidden text-sm">
+        TFashion
+      </Link>
 
       <nav className="hidden items-center gap-5 md:flex">
         <Link href="/" className="p-3 hover:text-red-800 transition-all">
           Accueil
         </Link>
-        <Link href="/" className="p-3 hover:text-red-800 transition-all">
+        <Link
+          href="/products"
+          className="p-3 hover:text-red-800 transition-all"
+        >
           Shop
         </Link>
-        <Link href="/" className="p-3 hover:text-red-800 transition-all">
+        <Link href="/apropos" className="p-3 hover:text-red-800 transition-all">
           A propos
         </Link>
       </nav>

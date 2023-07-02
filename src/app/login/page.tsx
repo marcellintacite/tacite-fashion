@@ -1,5 +1,3 @@
-"use client";
-
 import Navbar from "@/components/Navbar";
 import CartDrawer from "@/components/cart/CartDrawer";
 import React from "react";
@@ -10,8 +8,6 @@ export default function page({}: Props) {
   return (
     <main>
       <div className="w-[98%] md:w-4/5 m-auto ">
-        <Navbar />
-        <CartDrawer />
         <section>
           <div className="flex md:h-[80vh] md:justify-center md:items-center">
             <div className="w-[400px] rounded-md min-h-[400px] border shadow shadow-slate-100 p-3 mt-5 md:mt-0">

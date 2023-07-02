@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
 
@@ -16,9 +17,9 @@ const Footer = () => {
           <a href="#" className="mx-3 hover:text-gray-300">
             Accueil
           </a>
-          <a href="#" className="mx-3 hover:text-gray-300">
+          <Link href="apropos" className="mx-3 hover:text-gray-300">
             A propos
-          </a>
+          </Link>
           {/* Add more links as needed */}
         </nav>
 

@@ -1,4 +1,4 @@
-export type productType = {
+export interface productType {
   id: number;
   title: string;
   price: number;
@@ -10,4 +10,4 @@ export type productType = {
     count: number;
   };
   quantity?: number | 1;
-};
+}

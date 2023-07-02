@@ -3,6 +3,7 @@ import { useAppSelector } from "@/redux/hooks";
 import ContentLoader from "react-content-loader";
 import ProductCard from "./ProductCard";
 import { productType } from "@/types/product";
+import Link from "next/link";
 
 type Props = {};
 
@@ -53,6 +54,14 @@ export default function Products({}: Props) {
         {topTen.map((product: productType) => (
           <ProductCard key={product.id} product={product} />
         ))}
+      </div>
+      <div className="flex justify-center items-center p-4 mt-3">
+        <Link
+          href={"/products"}
+          className="bg-slate-400 rounded-md p-3 text-white"
+        >
+          Voir plus des produits
+        </Link>
       </div>
     </section>
   );

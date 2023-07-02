@@ -1,7 +1,5 @@
-import { Inter } from "next/font/google";
-
 export const metadata = {
-  title: "Connexion - TFashion",
+  title: "Categorie - TFashion",
   description: "Connectez-vous chez TFashion pour rester clean",
 };
 

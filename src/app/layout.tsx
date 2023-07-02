@@ -1,7 +1,14 @@
+"use client";
+
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { Providers } from "@/redux/provider";
 import Navbar from "@/components/Navbar";
+import HeaderFirst from "@/components/HeaderFirst";
+import { Toaster } from "react-hot-toast";
+import { useAppSelector } from "@/redux/hooks";
+import { storeType } from "@/types/store";
+import CartDrawer from "@/components/cart/CartDrawer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -49,9 +56,19 @@ export default function RootLayout({
           name="twitter:image"
           content="https://peacockplume.fr/sites/default/files/styles/photo_story/public/clarke-sanders-ybPJ47PMT_M-unsplash-min.jpg?itok=35A7ffKo"
         />
+        <title>TFashion Commerce</title>
       </head>
       <Providers>
-        <body className={`${inter.className}`}>{children}</body>
+        <body className={`${inter.className}`}>
+          <>
+            <Toaster position="bottom-center" reverseOrder={false} />
+            <div className="w-[98%] md:w-4/5 m-auto">
+              <Navbar />
+              <CartDrawer />
+              {children}
+            </div>
+          </>
+        </body>
       </Providers>
     </html>
   );

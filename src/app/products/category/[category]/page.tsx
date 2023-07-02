@@ -1,7 +1,10 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 type Props = {};
 
-export default function page({}: Props) {
+const page = (props: Props) => {
   return <div>page</div>;
-}
+};
+
+export default page;
