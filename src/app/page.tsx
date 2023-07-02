@@ -17,7 +17,7 @@ import Footer from "@/components/Footer";
 
 type Props = {};
 
-export default function page({}: Props) {
+export default function Page({}: Props) {
   const { isOpen } = useAppSelector((state: storeType) => state.header);
 
   const dispatch = useAppDispatch();
