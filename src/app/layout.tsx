@@ -11,11 +11,6 @@ import { storeType } from "@/types/store";
 import CartDrawer from "@/components/cart/CartDrawer";
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Fashion - Ecommerce App",
-  description: "A fashion ecommerce app built with Next.js and Redux Toolkit",
-};
-
 export default function RootLayout({
   children,
 }: {
