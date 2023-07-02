@@ -10,4 +10,9 @@ export type storeType = {
     total: number;
     totalItems: number;
   };
+  categories: {
+    products: productType[];
+    loading: boolean;
+    search: string;
+  };
 };

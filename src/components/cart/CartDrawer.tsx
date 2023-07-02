@@ -57,7 +57,9 @@ const CartDrawer = () => {
             >
               <Image src={item.image} alt={item.title} width={70} height={50} />
               <div className="flex-1">
-                <p className="font-semibold">{item.title}</p>
+                <Link href={`/products/${item.id}`} className="font-semibold">
+                  {item.title}
+                </Link>
                 <div className="flex gap-2 justify-between">
                   <p>{item.price} $</p>
                   <p>

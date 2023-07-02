@@ -1,7 +1,8 @@
-import { Inter } from "next/font/google";
+import Footer from "@/components/Footer";
+import Reduction from "@/components/Reducton";
 
 export const metadata = {
-  title: "Connexion - TFashion",
+  title: "Produit - TFashion",
   description: "Connectez-vous chez TFashion pour rester clean",
 };
 
@@ -10,5 +11,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <Reduction />
+      <Footer />
+    </>
+  );
 }

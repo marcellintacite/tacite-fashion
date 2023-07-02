@@ -9,7 +9,7 @@ type Props = {
 
 export default function CardProduct({ data }: Props) {
   return (
-    <article className="md:w-full w-[90%] m-auto border p-2 rounded-md border-gray-200">
+    <article className="md:w-full w-[90%] m-auto border p-2 rounded-md border-gray-200 anim">
       <div className="w-full">
         <img
           src={data.image}

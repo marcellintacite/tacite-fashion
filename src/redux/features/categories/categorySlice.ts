@@ -30,6 +30,9 @@ const caterorySlice = createSlice({
     updateSearch: (state, action) => {
       state.search = action.payload;
     },
+    setSearchString: (state, action) => {
+      state.search = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.pending, (state) => {
@@ -45,6 +48,6 @@ const caterorySlice = createSlice({
   },
 });
 
-export const { updateSearch } = caterorySlice.actions;
+export const { updateSearch, setSearchString } = caterorySlice.actions;
 
 export default caterorySlice.reducer;

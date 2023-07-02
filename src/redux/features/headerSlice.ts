@@ -3,11 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 type HeaderState = {
   isOpen: boolean;
   isCartOpen: boolean;
+  isFilterOpen?: boolean;
 };
 
 const initialState = {
   isOpen: true,
   isCartOpen: false,
+  isFilterOpen: false,
 } as HeaderState;
 
 const headerSlice = createSlice({

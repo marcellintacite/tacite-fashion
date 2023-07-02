@@ -36,6 +36,11 @@ export default function RootLayout({
           property="og:description"
           content="Votre style , c'est notre préocupation. Achetez et recevez une livraison à domicile gratuite."
         />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="/src/assets/download.png"
+        ></link>
         <meta
           property="og:image"
           content="https://peacockplume.fr/sites/default/files/styles/photo_story/public/clarke-sanders-ybPJ47PMT_M-unsplash-min.jpg?itok=35A7ffKo"
