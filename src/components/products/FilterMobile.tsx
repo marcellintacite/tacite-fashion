@@ -24,7 +24,7 @@ export default function FilterMobile({}: Props) {
           className="p-2 rounded-md bg-red-200"
           onClick={() => setShow(!show)}
         >
-          {show ? <BiFilter size={27} /> : <AiOutlineEyeInvisible size={27} />}
+          {show ? <AiOutlineEyeInvisible size={27} /> : <BiFilter size={27} />}
         </button>
 
         <button
@@ -33,15 +33,15 @@ export default function FilterMobile({}: Props) {
         >
           <BiTrash
             size={27}
-            className={!show ? "text-gray-600 block" : "hidden"}
+            className={show ? "text-gray-600 block" : "hidden"}
           />
         </button>
       </div>
       <div
         className={
           show
-            ? "hidden"
-            : "flex justify-between mx-4 bg-slate-200 p-4 rounded-md showw mt-2 mb-3"
+            ? "flex justify-between mx-4 bg-slate-200 p-4 rounded-md showw mt-2 mb-3"
+            : "hidden"
         }
         onMouseOut={() => setShow(false)}
       >
