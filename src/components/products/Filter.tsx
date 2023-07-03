@@ -14,7 +14,7 @@ type Props = {};
 export default function Filter({}: Props) {
   const dispatch = useAppDispatch();
   return (
-    <aside id="filtre" className="md:w-[15%]  ">
+    <aside id="filtre" className="md:w-[15%] hidden md:block ">
       <div className="flex items-center justify-between border-b-2">
         <div className="flex items-center gap-3 text-lg font-bold">
           <AiFillFilter />

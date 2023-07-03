@@ -78,7 +78,7 @@ export default function ProductsList({}: Props) {
     <section id="products">
       {productsToShow.length === 0 && (
         <div className="flex flex-col items-center justify-center w-full ">
-          <p className="text-2xl font-semibold text-gray-500 mt-4">
+          <p className="text-2xl font-semibold text-gray-500 mt-4 text-center">
             {"Il n'y a pas de produits dans cette catégorie"}
           </p>
           <Image

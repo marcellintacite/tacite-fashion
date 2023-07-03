@@ -10,6 +10,8 @@ import { fetchProducts } from "@/redux/features/categories/categorySlice";
 import { useEffect } from "react";
 import Filter from "@/components/products/Filter";
 import Footer from "@/components/Footer";
+import FilterMobile from "@/components/products/FilterMobile";
+import Link from "next/link";
 
 type Props = {};
 
@@ -44,10 +46,18 @@ export default function Page({}: Props) {
               <AiOutlineSearch size={30} />
             </button>
           </div>
+
+          <Link
+            href="/products"
+            className="p-3 border mt-4 rounded-md text-white hover:scale-110 transition-all hover:text-white"
+          >
+            Apprendre plus
+          </Link>
         </div>
       </section>
       <section id="produits" className="flex flex-col md:flex-row mt-4 gap-2">
         <Filter />
+        <FilterMobile />
         <div className="flex-1">
           <ProductsList />
         </div>

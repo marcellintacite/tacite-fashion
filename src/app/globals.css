@@ -59,3 +59,20 @@
     opacity: 1;
   }
 }
+
+.showw {
+  animation: te ease 1s;
+  -webkit-animation: te ease 1s;
+  -moz-animation: te ease 1s;
+  -o-animation: te ease 1s;
+  -ms-animation: te ease 1s;
+}
+
+@keyframes te {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
