@@ -48,14 +48,18 @@ export default function Navbar({}: Props) {
           />
         </form>
         <div className="flex items-center gap-6 ml-4 justify-center">
-          <button className="relative" onClick={() => dispatch(toggleCart())}>
+          <button
+            className="relative"
+            onClick={() => dispatch(toggleCart())}
+            aria-label="bouton ouvrir carte"
+          >
             <span className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 p-1 rounded-full text-[10px] text-white flex items-center justify-center">
               {totalItems}
             </span>
 
             <AiOutlineShopping size={24} />
           </button>
-          <Link href={"/login"}>
+          <Link href={"/login"} aria-label="Ouvrir la page connexion">
             <AiOutlineUser size={20} />
           </Link>
         </div>

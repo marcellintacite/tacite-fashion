@@ -23,6 +23,7 @@ export default function FilterMobile({}: Props) {
         <button
           className="p-2 rounded-md bg-red-200"
           onClick={() => setShow(!show)}
+          aria-label="Filtre par prix"
         >
           {show ? <AiOutlineEyeInvisible size={27} /> : <BiFilter size={27} />}
         </button>
@@ -30,6 +31,7 @@ export default function FilterMobile({}: Props) {
         <button
           onClick={() => dispatch(resetFilter())}
           className="p-2 rounded-md "
+          aria-label="Filtre par prix"
         >
           <BiTrash
             size={27}
